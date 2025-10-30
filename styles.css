@@ -1,0 +1,158 @@
+/* --- Thème général --- */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background-color: #0b132b; /* bleu nuit */
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* --- En-tête et menu --- */
+header {
+  background-color: #1c2541;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+nav a {
+  color: #e0e0e0;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #00aaff;
+}
+
+/* --- Section d'accueil --- */
+.hero {
+  text-align: center;
+  padding: 6rem 1rem;
+  background: linear-gradient(135deg, #1c2541, #3a506b);
+  color: white;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+  background-color: #00aaff;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0077cc;
+}
+
+/* --- Page Leçons --- */
+.lessons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.lesson-card {
+  background-color: #1c2541;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 280px;
+  transition: transform 0.3s;
+}
+
+.lesson-card:hover {
+  transform: scale(1.03);
+}
+
+.lesson-card h3 {
+  color: #00aaff;
+  text-align: center;
+}
+
+.lesson-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lesson-card li {
+  background-color: #3a506b;
+  margin: 0.4rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.lesson-card li:hover {
+  background-color: #5bc0be;
+}
+
+/* --- Formulaire de réservation --- */
+.reservation-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #1c2541;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.reservation-form label {
+  font-weight: bold;
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #3a506b;
+  color: white;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus,
+.reservation-form textarea:focus {
+  outline: 2px solid #00aaff;
+}
+
+/* --- Pied de page --- */
+footer {
+  text-align: center;
+  background-color: #1c2541;
+  color: #ccc;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
