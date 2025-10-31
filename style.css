@@ -1,0 +1,71 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background: linear-gradient(180deg, #0a0f24, #1b2a4a);
+  color: white;
+}
+
+header {
+  background: #0b1533;
+  text-align: center;
+  padding: 20px 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.2em;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #ffb347;
+}
+
+section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.lesson {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.lesson:hover {
+  transform: scale(1.03);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0b1533;
+  font-size: 0.9em;
+  margin-top: 40px;
+}
+
+button, .btn {
+  background-color: #ffb347;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover, .btn:hover {
+  background-color: #ffd580;
+}
