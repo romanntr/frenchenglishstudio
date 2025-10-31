@@ -1,93 +1,96 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FrenchEnglishStudio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div id="welcome" class="fade-in">
-    <h1>Bienvenue sur <span>FrenchEnglishStudio</span> !</h1>
-    <p>Apprenez l’anglais et le français facilement.</p>
-  </div>
-
-  <header>
-    <h2>FrenchEnglishStudio</h2>
-    <div class="lang-switch">
-      <button id="frBtn">FR</button>
-      <button id="enBtn">EN</button>
-    </div>
+  <header class="site-header">
+    <div class="logo">FrenchEnglishStudio</div>
+    <nav>
+      <a href="#lessons">Leçons</a>
+      <a href="#reservation" class="reserve-btn">Réserver un cours</a>
+    </nav>
   </header>
 
+  <section id="welcome" class="welcome">
+    <h1>Bienvenue sur French & English Studio !</h1>
+    <p>Apprenez l’anglais et le français facilement.</p>
+  </section>
+
   <main>
-    <section id="lessons">
-      <h3>Leçons</h3>
-      <div class="lesson" data-fr="Les couleurs" data-en="Colors">
-        <h4>🎨 Les couleurs / Colors</h4>
-        <ul>
-          <li>Rouge — Red</li>
-          <li>Bleu — Blue</li>
-          <li>Vert — Green</li>
-          <li>Jaune — Yellow</li>
-          <li>Noir — Black</li>
-          <li>Blanc — White</li>
-        </ul>
+    <section id="lessons" class="lessons">
+      <h2>Leçons — catégories</h2>
+
+      <div class="collapsible">
+        <button class="header">🎨 Les couleurs <span class="chev">+</span></button>
+        <div class="content">
+          <div class="row"><div>Rouge — Red</div><button class="audio" data-fr="Rouge" data-en="Red">Écouter</button></div>
+          <div class="row"><div>Bleu — Blue</div><button class="audio" data-fr="Bleu" data-en="Blue">Écouter</button></div>
+          <div class="row"><div>Vert — Green</div><button class="audio" data-fr="Vert" data-en="Green">Écouter</button></div>
+          <div class="row"><div>Jaune — Yellow</div><button class="audio" data-fr="Jaune" data-en="Yellow">Écouter</button></div>
+          <div class="row"><div>Noir — Black</div><button class="audio" data-fr="Noir" data-en="Black">Écouter</button></div>
+        </div>
       </div>
 
-      <div class="lesson" data-fr="Jours de la semaine" data-en="Days of the week">
-        <h4>📅 Les jours de la semaine / Days of the Week</h4>
-        <ul>
-          <li>Lundi — Monday</li>
-          <li>Mardi — Tuesday</li>
-          <li>Mercredi — Wednesday</li>
-          <li>Jeudi — Thursday</li>
-          <li>Vendredi — Friday</li>
-          <li>Samedi — Saturday</li>
-          <li>Dimanche — Sunday</li>
-        </ul>
+      <div class="collapsible">
+        <button class="header">📅 Les jours de la semaine <span class="chev">+</span></button>
+        <div class="content">
+          <div class="row"><div>Lundi — Monday</div><button class="audio" data-fr="Lundi" data-en="Monday">Écouter</button></div>
+          <div class="row"><div>Mardi — Tuesday</div><button class="audio" data-fr="Mardi" data-en="Tuesday">Écouter</button></div>
+          <div class="row"><div>Mercredi — Wednesday</div><button class="audio" data-fr="Mercredi" data-en="Wednesday">Écouter</button></div>
+          <div class="row"><div>Jeudi — Thursday</div><button class="audio" data-fr="Jeudi" data-en="Thursday">Écouter</button></div>
+          <div class="row"><div>Vendredi — Friday</div><button class="audio" data-fr="Vendredi" data-en="Friday">Écouter</button></div>
+        </div>
       </div>
 
-      <div class="lesson" data-fr="Verbes de base" data-en="Basic verbs">
-        <h4>🔤 Verbes de base / Basic Verbs</h4>
-        <ul>
-          <li>Être — To be</li>
-          <li>Avoir — To have</li>
-          <li>Aller — To go</li>
-          <li>Faire — To do/make</li>
-          <li>Dire — To say</li>
-          <li>Voir — To see</li>
-        </ul>
+      <div class="collapsible">
+        <button class="header">🔤 Les verbes de base <span class="chev">+</span></button>
+        <div class="content">
+          <div class="row"><div>Être — To be</div><button class="audio" data-fr="Être" data-en="To be">Écouter</button></div>
+          <div class="row"><div>Avoir — To have</div><button class="audio" data-fr="Avoir" data-en="To have">Écouter</button></div>
+          <div class="row"><div>Aller — To go</div><button class="audio" data-fr="Aller" data-en="To go">Écouter</button></div>
+          <div class="row"><div>Faire — To do</div><button class="audio" data-fr="Faire" data-en="To do">Écouter</button></div>
+          <div class="row"><div>Parler — To speak</div><button class="audio" data-fr="Parler" data-en="To speak">Écouter</button></div>
+        </div>
       </div>
+
     </section>
 
-    <section id="reservation">
-      <h3>Réserver un cours</h3>
+    <section id="reservation" class="reservation">
+      <h2>Réserver un cours</h2>
       <form id="reservationForm">
-        <label>Nom :</label>
-        <input type="text" name="name" required>
+        <label>Nom complet</label>
+        <input name="name" type="text" required>
 
-        <label>Email :</label>
-        <input type="email" name="email" required>
+        <label>Adresse e-mail</label>
+        <input name="email" type="email" required>
 
-        <label>Langue souhaitée :</label>
-        <select name="language">
-          <option value="fr">Français</option>
-          <option value="en">Anglais</option>
+        <label>Langue souhaitée</label>
+        <select name="language" required>
+          <option value="">-- Choisissez --</option>
+          <option value="francais">Français</option>
+          <option value="anglais">Anglais</option>
+          <option value="both">Les deux</option>
         </select>
 
-        <label>Message :</label>
-        <textarea name="message" required></textarea>
+        <label>Date / créneau préféré</label>
+        <input name="datepref" placeholder="Ex : Lundi 15h" required>
 
-        <button type="submit">Envoyer</button>
+        <label>Message / besoin particulier</label>
+        <textarea name="message" rows="4"></textarea>
+
+        <button type="submit" class="submit">Envoyer la demande</button>
       </form>
-      <div id="confirmation"></div>
+
+      <div id="confirmation" class="confirmation" style="display:none"></div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 FrenchEnglishStudio — Tous droits réservés</p>
+    <p>© 2025 FrenchEnglishStudio</p>
   </footer>
 
   <script src="script.js"></script>

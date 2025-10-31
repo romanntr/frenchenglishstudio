@@ -1,147 +1,25 @@
-/* Style général */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(180deg, #0b1a30, #0f2244);
-  color: white;
-  overflow-x: hidden;
-}
-
-/* Message de bienvenue */
-#welcome {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(11, 26, 48, 0.95);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  z-index: 10;
-  animation: fadeOut 1s ease 4s forwards;
-}
-
-#welcome h1 span {
-  color: #3cb0ff;
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-/* En-tête */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #0d1830;
-  padding: 10px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-}
-
-header h2 {
-  font-size: 1.4rem;
-  color: #3cb0ff;
-}
-
-.lang-switch button {
-  background: transparent;
-  border: 1px solid #3cb0ff;
-  color: #3cb0ff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 8px;
-  transition: 0.3s;
-}
-
-.lang-switch button:hover {
-  background: #3cb0ff;
-  color: #0b1a30;
-}
-
-/* Sections principales */
-main {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-section {
-  margin-bottom: 50px;
-  animation: fadeInUp 1s ease;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Leçons */
-.lesson {
-  background: rgba(255,255,255,0.05);
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.lesson:hover {
-  background: rgba(255,255,255,0.1);
-}
-
-/* Formulaire */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-input, select, textarea {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background: rgba(255,255,255,0.1);
-  color: white;
-}
-
-button {
-  background: #3cb0ff;
-  color: #0b1a30;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #5dc9ff;
-}
-
-#confirmation {
-  margin-top: 15px;
-  font-weight: bold;
-  color: #3cb0ff;
-}
-
-/* Pied de page */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #0d1830;
-  font-size: 0.9rem;
-  color: #aaa;
-}
+:root{--bg:#0b132b;--panel:#111a33;--accent:#3cb0ff;--gold:#d6b24b}
+*{box-sizing:border-box}body{margin:0;font-family:Segoe UI,system-ui,Arial;background:var(--bg);color:#eaf7ff}
+.site-header{position:sticky;top:0;display:flex;justify-content:space-between;padding:12px 24px;background:var(--panel);align-items:center;z-index:40}
+.site-header .logo{font-weight:700;color:var(--accent)}.site-header nav a{color:#cfeeff;text-decoration:none;margin-left:18px}
+.reserve-btn{background:var(--gold);color:#071018;padding:8px 12px;border-radius:8px;font-weight:700}
+.welcome{height:78vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:20px;background:linear-gradient(180deg, rgba(11,19,43,1), rgba(11,19,43,1));animation:welcomeFade 1s ease both}
+.welcome h1{font-size:2rem;margin:0 0 8px;color:#fff}.welcome p{margin:0;color:#cfeeff}@keyframes welcomeFade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+main{max-width:1000px;margin:30px auto;padding:20px}
+.lessons{background:var(--panel);padding:18px;border-radius:12px}
+.collapsible{margin:12px 0;border-radius:10px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+.collapsible .header{width:100%;background:transparent;border:none;padding:12px 16px;text-align:left;color:#eaf7ff;font-size:1.05rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.collapsible .content{display:none;padding:8px 16px;color:#e7f6ff}
+.row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.02)}
+.audio{background:var(--gold);border:none;color:#071018;padding:6px 10px;border-radius:8px;cursor:pointer;font-weight:700}
+.reservation{background:var(--panel);margin-top:22px;padding:18px;border-radius:12px}
+.reservation form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.reservation label{grid-column:span 2;color:#dfeffb;font-weight:600}
+.reservation input,.reservation select,.reservation textarea{grid-column:span 2;padding:10px;border-radius:8px;border:none;background:#0f2438;color:#eaf7ff}
+.submit{background:var(--gold);color:#071018;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:700;grid-column:span 2}
+.confirmation{margin-top:12px;color:#bff3c6;font-weight:700;text-align:center}
+footer{padding:18px;text-align:center;color:#a9c9de;margin-top:26px;background:var(--panel)}
+@media(max-width:800px){.reservation form{grid-template-columns:1fr}.site-header nav a{display:none}}
+/* transition on scroll */
+section{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+section.visible{opacity:1;transform:none}

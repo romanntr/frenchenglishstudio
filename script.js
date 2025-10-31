@@ -1,51 +1,45 @@
-// 🌍 Gestion de la langue
-const frBtn = document.getElementById('frBtn');
-const enBtn = document.getElementById('enBtn');
-const lessons = document.querySelectorAll('.lesson');
-const title = document.querySelector('title');
-const sections = document.querySelectorAll('section h3');
+// Collapsible
+document.querySelectorAll('.collapsible > .header').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const parent = btn.parentElement;
+    const content = parent.querySelector('.content');
+    const open = content.style.display === 'block';
+    document.querySelectorAll('.collapsible .content').forEach(c=>c.style.display='none');
+    document.querySelectorAll('.collapsible .chev').forEach(ch=>ch.textContent='+');
+    if(!open){ content.style.display='block'; parent.querySelector('.chev').textContent='−'; setTimeout(()=>parent.scrollIntoView({behavior:'smooth',block:'center'}),150); } else { content.style.display='none'; parent.querySelector('.chev').textContent='+'; }
+  });
+});
 
-frBtn.addEventListener('click', () => setLanguage('fr'));
-enBtn.addEventListener('click', () => setLanguage('en'));
-
-function setLanguage(lang) {
-  if (lang === 'fr') {
-    title.textContent = "FrenchEnglishStudio";
-    sections[0].textContent = "Leçons";
-    sections[1].textContent = "Réserver un cours";
-    lessons.forEach(l => l.querySelector('h4').textContent = l.getAttribute('data-fr'));
-  } else {
-    title.textContent = "FrenchEnglishStudio";
-    sections[0].textContent = "Lessons";
-    sections[1].textContent = "Book a class";
-    lessons.forEach(l => l.querySelector('h4').textContent = l.getAttribute('data-en'));
-  }
+// Speech synthesis: speak FR then EN
+function speakPair(fr,en){
+  if(!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const frUt = new SpeechSynthesisUtterance(fr); frUt.lang='fr-FR'; frUt.rate=1; frUt.pitch=1;
+  const enUt = new SpeechSynthesisUtterance(en); enUt.lang='en-GB'; enUt.rate=1; enUt.pitch=1;
+  frUt.onend = ()=>{ window.speechSynthesis.speak(enUt); };
+  window.speechSynthesis.speak(frUt);
 }
+document.querySelectorAll('.audio').forEach(b=>b.addEventListener('click', ()=>speakPair(b.dataset.fr, b.dataset.en)));
 
-// 💌 Formulaire de réservation
+// Smooth scroll for header links
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click', function(e){ const t = document.querySelector(this.getAttribute('href')); if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); } }));
+
+// Form submission with Formspree
 document.getElementById('reservationForm').addEventListener('submit', function(e){
   e.preventDefault();
   const conf = document.getElementById('confirmation');
   const data = new FormData(this);
-
-  // 🔗 Simulation de l’envoi (remplacer par Formspree si besoin)
-  setTimeout(() => {
-    conf.style.display = 'block';
-    conf.textContent = '✅ Merci ! Nous avons bien reçu votre demande, vous serez contacté très bientôt par e-mail.';
-    this.reset();
-  }, 800);
+  fetch('https://formspree.io/f/movpkoej', { method:'POST', body: data, headers:{ 'Accept':'application/json' } })
+    .then(response=>{
+      if(response.ok){ conf.style.display='block'; conf.textContent='✅ Merci ! Nous avons bien reçu votre demande, vous serez contacté très bientôt par e-mail.'; this.reset(); }
+      else { conf.style.display='block'; conf.textContent='⚠️ Une erreur est survenue. Veuillez réessayer.'; }
+    })
+    .catch(()=>{ conf.style.display='block'; conf.textContent='❌ Erreur de connexion.'; });
 });
 
-// ✨ Animation des sections au défilement
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.animation = 'fadeInUp 1s ease forwards';
-    }
-  });
-}, { threshold: 0.2 });
+// Welcome disappear after 4s then remove
+setTimeout(()=>{ const w = document.getElementById('welcome'); if(w){ w.style.transition='opacity .7s ease'; w.style.opacity='0'; setTimeout(()=> w.remove(),800); } }, 4000);
 
-document.querySelectorAll('section').forEach(sec => {
-  sec.style.opacity = 0;
-  observer.observe(sec);
-});
+// reveal sections on scroll
+const obs = new IntersectionObserver((entries)=>{ entries.forEach(en=>{ if(en.isIntersecting) en.target.classList.add('visible'); }); }, {threshold:0.18});
+for(const s of document.querySelectorAll('main > section')) obs.observe(s);
