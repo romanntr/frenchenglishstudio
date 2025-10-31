@@ -1,33 +1,73 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FrenchEnglishStudio</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>FrenchEnglishStudio</h1>
+    <div class="logo">FrenchEnglishStudio</div>
     <nav>
-      <a href="index.html" class="active">Accueil</a>
-      <a href="lessons.html">Leçons</a>
-      <a href="reservation.html">Réserver</a>
-      <a href="about.html">À propos</a>
+      <a href="#lessons">Leçons</a>
+      <a href="#reservation" class="btn-reserve">Réserver un cours</a>
     </nav>
   </header>
 
-  <main class="home">
-    <section class="hero">
-      <h2>Apprenez l’anglais et le français — Des leçons claires, interactives et accessibles à tous.</h2>
-      <p>Des leçons conçues pour les adultes, pratiques et efficaces.</p>
-      <a href="lessons.html" class="btn-primary">Commencer maintenant</a>
-    </section>
-  </main>
+  <section id="welcome" class="welcome">
+    <h1 class="fade-in">Bienvenue sur FrenchEnglishStudio</h1>
+    <p class="fade-in-delay">Apprenez l’anglais et le français avec simplicité.</p>
+  </section>
 
-  <footer>
-    <p>© 2025 FrenchEnglishStudio — Tous droits réservés.</p>
-  </footer>
+  <section id="lessons" class="lessons">
+    <h2>Leçons bilingues</h2>
+
+    <div class="lesson">
+      <h3>Les couleurs</h3>
+      <p>Rouge - Red<br>Bleu - Blue<br>Vert - Green<br>Jaune - Yellow</p>
+      <button onclick="playVoice('Les couleurs : Rouge, Bleu, Vert, Jaune.')">Écouter</button>
+    </div>
+
+    <div class="lesson">
+      <h3>Les jours de la semaine</h3>
+      <p>Lundi - Monday<br>Mardi - Tuesday<br>Mercredi - Wednesday<br>Jeudi - Thursday<br>Vendredi - Friday</p>
+      <button onclick="playVoice('Les jours de la semaine : Lundi, Mardi, Mercredi, Jeudi, Vendredi.')">Écouter</button>
+    </div>
+
+    <div class="lesson">
+      <h3>Les verbes de base</h3>
+      <p>Être - To be<br>Avoir - To have<br>Aller - To go<br>Faire - To do</p>
+      <button onclick="playVoice('Les verbes de base : Être, Avoir, Aller, Faire.')">Écouter</button>
+    </div>
+  </section>
+
+  <section id="reservation" class="reservation">
+    <h2>Réserver un cours</h2>
+    <form id="reservationForm">
+      <label>Nom complet :</label>
+      <input type="text" name="name" required>
+
+      <label>Email :</label>
+      <input type="email" name="email" required>
+
+      <label>Langue souhaitée :</label>
+      <select name="langue" required>
+        <option value="anglais">Anglais</option>
+        <option value="français">Français</option>
+      </select>
+
+      <label>Date / créneau préféré :</label>
+      <input type="text" name="date" placeholder="Ex : Lundi à 15h" required>
+
+      <label>Message :</label>
+      <textarea name="message" rows="4"></textarea>
+
+      <button type="submit" class="btn-send">Envoyer la demande</button>
+    </form>
+    <p id="confirmation" class="confirmation"></p>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>

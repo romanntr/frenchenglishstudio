@@ -1,0 +1,133 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #0b132b;
+  color: white;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(11, 19, 43, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  margin-left: 25px;
+  text-decoration: none;
+}
+
+.btn-reserve {
+  background-color: gold;
+  color: black;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+section {
+  padding: 120px 40px 60px;
+  text-align: center;
+}
+
+.welcome {
+  background-color: #0b132b;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.lessons {
+  background-color: #1c2541;
+  border-top: 2px solid gold;
+}
+
+.lesson {
+  background-color: #3a506b;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+}
+
+button {
+  background-color: gold;
+  border: none;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.reservation {
+  background-color: #1c2541;
+  border-top: 2px solid gold;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.btn-send {
+  width: 100%;
+  background-color: gold;
+  color: black;
+  font-weight: bold;
+}
+
+.confirmation {
+  text-align: center;
+  color: lightgreen;
+  font-weight: bold;
+  margin-top: 15px;
+}
