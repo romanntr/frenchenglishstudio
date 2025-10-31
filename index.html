@@ -1,96 +1,64 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FrenchEnglishStudio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="logo">FrenchEnglishStudio</div>
-    <nav>
-      <a href="#lessons">Leçons</a>
-      <a href="#reservation" class="reserve-btn">Réserver un cours</a>
-    </nav>
+
+  <header>
+    <h1>French & English Studio</h1>
+    <p class="welcome-message">Bienvenue sur French & English Studio !</p>
   </header>
 
-  <section id="welcome" class="welcome">
-    <h1>Bienvenue sur French & English Studio !</h1>
-    <p>Apprenez l’anglais et le français facilement.</p>
-  </section>
-
   <main>
-    <section id="lessons" class="lessons">
-      <h2>Leçons — catégories</h2>
-
-      <div class="collapsible">
-        <button class="header">🎨 Les couleurs <span class="chev">+</span></button>
-        <div class="content">
-          <div class="row"><div>Rouge — Red</div><button class="audio" data-fr="Rouge" data-en="Red">Écouter</button></div>
-          <div class="row"><div>Bleu — Blue</div><button class="audio" data-fr="Bleu" data-en="Blue">Écouter</button></div>
-          <div class="row"><div>Vert — Green</div><button class="audio" data-fr="Vert" data-en="Green">Écouter</button></div>
-          <div class="row"><div>Jaune — Yellow</div><button class="audio" data-fr="Jaune" data-en="Yellow">Écouter</button></div>
-          <div class="row"><div>Noir — Black</div><button class="audio" data-fr="Noir" data-en="Black">Écouter</button></div>
-        </div>
+    <section id="lessons">
+      <h2>Leçons</h2>
+      <div class="lesson">
+        <h3>Les couleurs</h3>
+        <p>Rouge, Bleu, Vert, Jaune...</p>
       </div>
 
-      <div class="collapsible">
-        <button class="header">📅 Les jours de la semaine <span class="chev">+</span></button>
-        <div class="content">
-          <div class="row"><div>Lundi — Monday</div><button class="audio" data-fr="Lundi" data-en="Monday">Écouter</button></div>
-          <div class="row"><div>Mardi — Tuesday</div><button class="audio" data-fr="Mardi" data-en="Tuesday">Écouter</button></div>
-          <div class="row"><div>Mercredi — Wednesday</div><button class="audio" data-fr="Mercredi" data-en="Wednesday">Écouter</button></div>
-          <div class="row"><div>Jeudi — Thursday</div><button class="audio" data-fr="Jeudi" data-en="Thursday">Écouter</button></div>
-          <div class="row"><div>Vendredi — Friday</div><button class="audio" data-fr="Vendredi" data-en="Friday">Écouter</button></div>
-        </div>
+      <div class="lesson">
+        <h3>Les jours de la semaine</h3>
+        <p>Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche.</p>
       </div>
 
-      <div class="collapsible">
-        <button class="header">🔤 Les verbes de base <span class="chev">+</span></button>
-        <div class="content">
-          <div class="row"><div>Être — To be</div><button class="audio" data-fr="Être" data-en="To be">Écouter</button></div>
-          <div class="row"><div>Avoir — To have</div><button class="audio" data-fr="Avoir" data-en="To have">Écouter</button></div>
-          <div class="row"><div>Aller — To go</div><button class="audio" data-fr="Aller" data-en="To go">Écouter</button></div>
-          <div class="row"><div>Faire — To do</div><button class="audio" data-fr="Faire" data-en="To do">Écouter</button></div>
-          <div class="row"><div>Parler — To speak</div><button class="audio" data-fr="Parler" data-en="To speak">Écouter</button></div>
-        </div>
+      <div class="lesson">
+        <h3>Les verbes de base</h3>
+        <p>Être, Avoir, Aller, Faire, Dire...</p>
       </div>
-
     </section>
 
-    <section id="reservation" class="reservation">
+    <section id="reservation">
       <h2>Réserver un cours</h2>
-      <form id="reservationForm">
-        <label>Nom complet</label>
-        <input name="name" type="text" required>
+      <form id="bookingForm" action="https://formspree.io/f/xjkpqawl" method="POST">
+        <label>Nom complet :</label>
+        <input type="text" name="name" required>
 
-        <label>Adresse e-mail</label>
-        <input name="email" type="email" required>
+        <label>Email :</label>
+        <input type="email" name="_replyto" required>
 
-        <label>Langue souhaitée</label>
+        <label>Langue souhaitée :</label>
         <select name="language" required>
-          <option value="">-- Choisissez --</option>
           <option value="francais">Français</option>
           <option value="anglais">Anglais</option>
-          <option value="both">Les deux</option>
         </select>
 
-        <label>Date / créneau préféré</label>
-        <input name="datepref" placeholder="Ex : Lundi 15h" required>
+        <label>Message :</label>
+        <textarea name="message" rows="4" required></textarea>
 
-        <label>Message / besoin particulier</label>
-        <textarea name="message" rows="4"></textarea>
-
-        <button type="submit" class="submit">Envoyer la demande</button>
+        <button type="submit">Envoyer</button>
       </form>
 
-      <div id="confirmation" class="confirmation" style="display:none"></div>
+      <p id="confirmation" class="hidden">✅ Votre réservation a bien été envoyée !</p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 FrenchEnglishStudio</p>
+    <p>© 2025 French & English Studio. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js"></script>

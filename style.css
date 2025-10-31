@@ -1,25 +1,80 @@
-:root{--bg:#0b132b;--panel:#111a33;--accent:#3cb0ff;--gold:#d6b24b}
-*{box-sizing:border-box}body{margin:0;font-family:Segoe UI,system-ui,Arial;background:var(--bg);color:#eaf7ff}
-.site-header{position:sticky;top:0;display:flex;justify-content:space-between;padding:12px 24px;background:var(--panel);align-items:center;z-index:40}
-.site-header .logo{font-weight:700;color:var(--accent)}.site-header nav a{color:#cfeeff;text-decoration:none;margin-left:18px}
-.reserve-btn{background:var(--gold);color:#071018;padding:8px 12px;border-radius:8px;font-weight:700}
-.welcome{height:78vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:20px;background:linear-gradient(180deg, rgba(11,19,43,1), rgba(11,19,43,1));animation:welcomeFade 1s ease both}
-.welcome h1{font-size:2rem;margin:0 0 8px;color:#fff}.welcome p{margin:0;color:#cfeeff}@keyframes welcomeFade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-main{max-width:1000px;margin:30px auto;padding:20px}
-.lessons{background:var(--panel);padding:18px;border-radius:12px}
-.collapsible{margin:12px 0;border-radius:10px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
-.collapsible .header{width:100%;background:transparent;border:none;padding:12px 16px;text-align:left;color:#eaf7ff;font-size:1.05rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
-.collapsible .content{display:none;padding:8px 16px;color:#e7f6ff}
-.row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.02)}
-.audio{background:var(--gold);border:none;color:#071018;padding:6px 10px;border-radius:8px;cursor:pointer;font-weight:700}
-.reservation{background:var(--panel);margin-top:22px;padding:18px;border-radius:12px}
-.reservation form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.reservation label{grid-column:span 2;color:#dfeffb;font-weight:600}
-.reservation input,.reservation select,.reservation textarea{grid-column:span 2;padding:10px;border-radius:8px;border:none;background:#0f2438;color:#eaf7ff}
-.submit{background:var(--gold);color:#071018;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:700;grid-column:span 2}
-.confirmation{margin-top:12px;color:#bff3c6;font-weight:700;text-align:center}
-footer{padding:18px;text-align:center;color:#a9c9de;margin-top:26px;background:var(--panel)}
-@media(max-width:800px){.reservation form{grid-template-columns:1fr}.site-header nav a{display:none}}
-/* transition on scroll */
-section{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-section.visible{opacity:1;transform:none}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0b1a33;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 50px 20px 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #f5f5f5;
+}
+
+.welcome-message {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 1s ease, transform 1s ease;
+  font-size: 1.2em;
+  color: #66ccff;
+}
+
+main {
+  padding: 20px;
+}
+
+.lesson {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+button {
+  background-color: #0059b3;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0073e6;
+}
+
+.hidden {
+  display: none;
+  margin-top: 10px;
+  color: #66ff99;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  margin-top: 40px;
+}
