@@ -1,163 +1,59 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FrenchEnglishStudio — Apprenez l’anglais et le français</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>French & English Studio - Réservation</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header>
+  <h1>French & English Studio</h1>
+  <p>Apprenez l’anglais et le français</p>
+</header>
 
-  <header class="site-header">
-    <div class="logo">FrenchEnglishStudio</div>
-    <nav>
-      <a href="#lessons">Leçons</a>
-      <a href="#reservation" class="reserve">Réserver un cours</a>
-      <a id="topBtn" href="#top" class="top-link">⬆️</a>
-    </nav>
-  </header>
+<main>
+<section id="reservation">
+  <h2>Réserver un cours</h2>
+  <form id="reservationForm" action="https://formspree.io/f/xjkpqawl" method="POST" class="form-reservation">
+    <div class="form-group">
+      <label>Nom complet</label>
+      <input name="name" type="text" placeholder="Votre nom complet" required>
+    </div>
+    <div class="form-group">
+      <label>Adresse e-mail</label>
+      <input name="_replyto" type="email" placeholder="exemple@mail.com" required>
+    </div>
+    <div class="form-group">
+      <label>Langue souhaitée</label>
+      <select name="language" required>
+        <option value="francais">Français</option>
+        <option value="anglais">Anglais</option>
+        <option value="both">Les deux</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Date / créneau préféré</label>
+      <input name="datepref" placeholder="Ex : Lundi 15h" required>
+    </div>
+    <div class="form-group">
+      <label>Message / besoin particulier</label>
+      <textarea name="message" rows="4" placeholder="Détaillez votre besoin ici..."></textarea>
+    </div>
+    <button type="submit" class="btn-submit">📩 Envoyer la demande</button>
+  </form>
+  <p id="confirmation" class="confirmation" style="display:none">✅ Votre réservation a bien été envoyée !</p>
+</section>
 
-  <section id="welcome" class="welcome">
-    <h1>Bienvenue sur FrenchEnglishStudio</h1>
-    <p>Apprenez l’anglais et le français facilement.</p>
-  </section>
+<section id="premium">
+  <h2>Premium</h2>
+  <p>Offre premium : suivi personnalisé, corrections, ressources.</p>
+  <button class="btn-submit">Réserver un cours premium</button>
+</section>
+</main>
 
-  <main id="top">
-    <section id="lessons" class="panel">
-      <h2>Leçons</h2>
-
-      <!-- couleurs -->
-      <div class="category">
-        <h3>🎨 Les couleurs</h3>
-        <ul class="word-list">
-          <li>Rouge <button class="audio" data-fr="Rouge" data-en="Red">🔊</button></li>
-          <li>Bleu <button class="audio" data-fr="Bleu" data-en="Blue">🔊</button></li>
-          <li>Vert <button class="audio" data-fr="Vert" data-en="Green">🔊</button></li>
-          <li>Jaune <button class="audio" data-fr="Jaune" data-en="Yellow">🔊</button></li>
-          <li>Noir <button class="audio" data-fr="Noir" data-en="Black">🔊</button></li>
-        </ul>
-      </div>
-
-      <!-- jours -->
-      <div class="category">
-        <h3>📅 Jours de la semaine</h3>
-        <ul class="word-list">
-          <li>Lundi <button class="audio" data-fr="Lundi" data-en="Monday">🔊</button></li>
-          <li>Mardi <button class="audio" data-fr="Mardi" data-en="Tuesday">🔊</button></li>
-          <li>Mercredi <button class="audio" data-fr="Mercredi" data-en="Wednesday">🔊</button></li>
-          <li>Jeudi <button class="audio" data-fr="Jeudi" data-en="Thursday">🔊</button></li>
-          <li>Vendredi <button class="audio" data-fr="Vendredi" data-en="Friday">🔊</button></li>
-        </ul>
-      </div>
-
-      <!-- verbes -->
-      <div class="category">
-        <h3>🔤 Verbes de base</h3>
-        <ul class="word-list">
-          <li>Être <button class="audio" data-fr="Être" data-en="To be">🔊</button></li>
-          <li>Avoir <button class="audio" data-fr="Avoir" data-en="To have">🔊</button></li>
-          <li>Aller <button class="audio" data-fr="Aller" data-en="To go">🔊</button></li>
-          <li>Faire <button class="audio" data-fr="Faire" data-en="To do">🔊</button></li>
-          <li>Parler <button class="audio" data-fr="Parler" data-en="To speak">🔊</button></li>
-        </ul>
-      </div>
-
-      <!-- animaux -->
-      <div class="category">
-        <h3>🐶 Les animaux</h3>
-        <ul class="word-list">
-          <li>Chien <button class="audio" data-fr="Chien" data-en="Dog">🔊</button></li>
-          <li>Chat <button class="audio" data-fr="Chat" data-en="Cat">🔊</button></li>
-          <li>Oiseau <button class="audio" data-fr="Oiseau" data-en="Bird">🔊</button></li>
-          <li>Poisson <button class="audio" data-fr="Poisson" data-en="Fish">🔊</button></li>
-        </ul>
-      </div>
-
-      <!-- maison -->
-      <div class="category">
-        <h3>🏠 Objets de la maison</h3>
-        <ul class="word-list">
-          <li>Chaise <button class="audio" data-fr="Chaise" data-en="Chair">🔊</button></li>
-          <li>Table <button class="audio" data-fr="Table" data-en="Table">🔊</button></li>
-          <li>Lit <button class="audio" data-fr="Lit" data-en="Bed">🔊</button></li>
-          <li>Porte <button class="audio" data-fr="Porte" data-en="Door">🔊</button></li>
-        </ul>
-      </div>
-
-      <!-- salutations -->
-      <div class="category">
-        <h3>👋 Salutations</h3>
-        <ul class="word-list">
-          <li>Bonjour <button class="audio" data-fr="Bonjour" data-en="Hello">🔊</button></li>
-          <li>Au revoir <button class="audio" data-fr="Au revoir" data-en="Goodbye">🔊</button></li>
-          <li>Merci <button class="audio" data-fr="Merci" data-en="Thank you">🔊</button></li>
-          <li>S'il vous plaît <button class="audio" data-fr="S'il vous plaît" data-en="Please">🔊</button></li>
-        </ul>
-      </div>
-
-      <!-- nombres -->
-      <div class="category">
-        <h3>🔢 Nombres</h3>
-        <ul class="word-list">
-          <li>Un <button class="audio" data-fr="Un" data-en="One">🔊</button></li>
-          <li>Deux <button class="audio" data-fr="Deux" data-en="Two">🔊</button></li>
-          <li>Trois <button class="audio" data-fr="Trois" data-en="Three">🔊</button></li>
-          <li>Quatre <button class="audio" data-fr="Quatre" data-en="Four">🔊</button></li>
-        </ul>
-      </div>
-
-      <!-- aliments -->
-      <div class="category">
-        <h3>🍎 Les aliments</h3>
-        <ul class="word-list">
-          <li>Pomme <button class="audio" data-fr="Pomme" data-en="Apple">🔊</button></li>
-          <li>Pain <button class="audio" data-fr="Pain" data-en="Bread">🔊</button></li>
-          <li>Fromage <button class="audio" data-fr="Fromage" data-en="Cheese">🔊</button></li>
-          <li>Eau <button class="audio" data-fr="Eau" data-en="Water">🔊</button></li>
-        </ul>
-      </div>
-
-    </section>
-
-    <section id="reservation" class="panel">
-      <h2>Réserver un cours</h2>
-      <form id="reservationForm" action="https://formspree.io/f/xjkpqawl" method="POST">
-        <label>Nom complet</label>
-        <input name="name" type="text" required>
-
-        <label>Adresse e-mail</label>
-        <input name="_replyto" type="email" required>
-
-        <label>Langue souhaitée</label>
-        <select name="language" required>
-          <option value="francais">Français</option>
-          <option value="anglais">Anglais</option>
-          <option value="both">Les deux</option>
-        </select>
-
-        <label>Date / créneau préféré</label>
-        <input name="datepref" placeholder="Ex : Lundi 15h" required>
-
-        <label>Message / besoin particulier</label>
-        <textarea name="message" rows="4"></textarea>
-
-        <button type="submit" class="btn-submit">Envoyer la demande</button>
-      </form>
-      <p id="confirmation" class="confirmation" style="display:none">✅ Votre réservation a bien été envoyée !</p>
-    </section>
-
-    <section id="premium" class="panel">
-      <h2>Premium</h2>
-      <p>Offre premium : suivi personnalisé, corrections, ressources.</p>
-      <a class="btn-gold" href="#reservation">Réserver un cours premium</a>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <p>© 2025 FrenchEnglishStudio — Tous droits réservés</p>
-  </footer>
-
-  <script src="script.js"></script>
+<footer>
+  <p>© 2025 FrenchEnglishStudio — Tous droits réservés</p>
+</footer>
 </body>
 </html>

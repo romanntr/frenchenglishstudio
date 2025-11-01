@@ -1,38 +1,62 @@
-:root{
-  --bg1:#0b132b; --bg2:#0f2346; --panel:#111a33; --gold:#d6b24b; --accent:#3cb0ff;
-  --fw: 'Segoe UI', Roboto, system-ui, sans-serif;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #071018;
+  color: #fff;
 }
-*{box-sizing:border-box}
-body{
-  margin:0;font-family:var(--fw);background:linear-gradient(180deg,var(--bg1),var(--bg2));color:#e9f6ff;
+header {
+  text-align: center;
+  padding: 40px 0 10px 0;
+  background: linear-gradient(90deg, #004aad, #0078d7);
 }
-.site-header{position:sticky;top:0;z-index:50;background:rgba(11,19,43,0.85);display:flex;justify-content:space-between;align-items:center;padding:12px 24px}
-.site-header .logo{font-weight:800;color:var(--accent);font-size:1.05rem}
-.site-header nav a{color:#d8eefc;text-decoration:none;margin-left:18px;font-weight:600}
-.reserve{background:var(--gold);color:#071018;padding:8px 12px;border-radius:8px;font-weight:800}
-#welcome{height:78vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:10px;animation:fadeIn 1s ease}
-#welcome h1{font-size:2.2rem;margin:0 0 8px}
-#welcome p{color:#cfeeff;margin:0 0 12px}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-main{max-width:1100px;margin:30px auto;padding:20px}
-.panel{background:rgba(255,255,255,0.03);padding:18px;border-radius:12px;margin-bottom:20px;box-shadow:0 6px 18px rgba(2,6,23,0.5);transition:transform .35s,opacity .45s}
-.panel:hover{transform:translateY(-4px)}
-.category{margin:14px 0}
-.word-list{list-style:none;padding:0;margin:8px 0}
-.word-list li{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);margin-bottom:8px}
-.audio{background:var(--gold);border:none;padding:8px 10px;border-radius:8px;font-weight:800;cursor:pointer;color:#071018}
-.btn-submit{background:var(--accent);border:none;color:#071018;padding:10px 14px;border-radius:8px;font-weight:800;cursor:pointer;margin-top:8px}
-.btn-gold{display:inline-block;background:var(--gold);color:#071018;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:800;margin-top:8px}
-.confirmation{color:#bff3c6;margin-top:12px;font-weight:700}
-.site-footer{text-align:center;padding:18px;color:#9fbcd6;margin-top:18px;background:transparent}
-
-/* scroll reveal */
-.panel{opacity:0;transform:translateY(18px)}
-.panel.visible{opacity:1;transform:none;transition:all .6s ease}
-
-/* responsive */
-@media(max-width:800px){
-  .word-list li{flex-direction:row;gap:8px}
-  .site-header nav a{display:none}
-  .site-header{padding:12px}
+h1 { font-size: 2em; margin: 0; }
+h2 { color: #4ec4ff; }
+main { padding: 30px; }
+.form-reservation {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 14px rgba(0,0,0,0.4);
+  max-width: 500px;
+  margin: auto;
+}
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-group label {
+  font-weight: 600;
+  color: #cbeaff;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+.btn-submit {
+  align-self: center;
+  padding: 10px 16px;
+  background: #4ec4ff;
+  border: none;
+  border-radius: 8px;
+  color: #071018;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-submit:hover {
+  background: #66d0ff;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #000b1d;
+  color: #bbb;
 }
