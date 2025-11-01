@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>French & English Studio - Réservation</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrenchEnglishStudio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>French & English Studio</h1>
-  <p>Apprenez l’anglais et le français</p>
-</header>
+  <div id="welcome-message">Bienvenue sur FrenchEnglishStudio</div>
 
-<main>
-<section id="reservation">
-  <h2>Réserver un cours</h2>
-  <form id="reservationForm" action="https://formspree.io/f/xjkpqawl" method="POST" class="form-reservation">
-    <div class="form-group">
-      <label>Nom complet</label>
-      <input name="name" type="text" placeholder="Votre nom complet" required>
-    </div>
-    <div class="form-group">
-      <label>Adresse e-mail</label>
-      <input name="_replyto" type="email" placeholder="exemple@mail.com" required>
-    </div>
-    <div class="form-group">
-      <label>Langue souhaitée</label>
-      <select name="language" required>
-        <option value="francais">Français</option>
-        <option value="anglais">Anglais</option>
-        <option value="both">Les deux</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>Date / créneau préféré</label>
-      <input name="datepref" placeholder="Ex : Lundi 15h" required>
-    </div>
-    <div class="form-group">
-      <label>Message / besoin particulier</label>
-      <textarea name="message" rows="4" placeholder="Détaillez votre besoin ici..."></textarea>
-    </div>
-    <button type="submit" class="btn-submit">📩 Envoyer la demande</button>
-  </form>
-  <p id="confirmation" class="confirmation" style="display:none">✅ Votre réservation a bien été envoyée !</p>
-</section>
+  <header>
+    <h1>Apprenez l’anglais et le français</h1>
+    <nav>
+      <a href="#lessons">Leçons de langues</a>
+      <a href="#reservation">Réserver un cours</a>
+    </nav>
+  </header>
 
-<section id="premium">
-  <h2>Premium</h2>
-  <p>Offre premium : suivi personnalisé, corrections, ressources.</p>
-  <button class="btn-submit">Réserver un cours premium</button>
-</section>
-</main>
+  <main>
+    <section id="lessons" class="section">
+      <h2>Leçons de langues</h2>
+      <div class="lesson">
+        <p><strong>Bonjour</strong> — <em>Hello</em> 
+          <button onclick="playAudio('bonjour')">🔊</button>
+        </p>
+        <audio id="bonjour" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_bonjour.mp3?filename=bonjour.mp3"></audio>
 
-<footer>
-  <p>© 2025 FrenchEnglishStudio — Tous droits réservés</p>
-</footer>
+        <p><strong>Merci</strong> — <em>Thank you</em>
+          <button onclick="playAudio('merci')">🔊</button>
+        </p>
+        <audio id="merci" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_merci.mp3?filename=merci.mp3"></audio>
+      </div>
+    </section>
+
+    <section id="reservation" class="section">
+      <h2>Réserver un cours</h2>
+      <form action="https://formspree.io/f/mldrlobk" method="POST">
+        <label>Nom :</label>
+        <input type="text" name="nom" required>
+
+        <label>Email :</label>
+        <input type="email" name="email" required>
+
+        <label>Date souhaitée :</label>
+        <input type="date" name="date" required>
+
+        <label>Message :</label>
+        <textarea name="message" rows="4" placeholder="Indiquez vos besoins..."></textarea>
+
+        <button type="submit">Envoyer la demande</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 FrenchEnglishStudio — Tous droits réservés</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
