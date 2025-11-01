@@ -1,71 +1,38 @@
-body {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  background: linear-gradient(180deg, #0a0f24, #1b2a4a);
-  color: white;
+:root{
+  --bg1:#0b132b; --bg2:#0f2346; --panel:#111a33; --gold:#d6b24b; --accent:#3cb0ff;
+  --fw: 'Segoe UI', Roboto, system-ui, sans-serif;
 }
-
-header {
-  background: #0b1533;
-  text-align: center;
-  padding: 20px 0;
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:var(--fw);background:linear-gradient(180deg,var(--bg1),var(--bg2));color:#e9f6ff;
 }
+.site-header{position:sticky;top:0;z-index:50;background:rgba(11,19,43,0.85);display:flex;justify-content:space-between;align-items:center;padding:12px 24px}
+.site-header .logo{font-weight:800;color:var(--accent);font-size:1.05rem}
+.site-header nav a{color:#d8eefc;text-decoration:none;margin-left:18px;font-weight:600}
+.reserve{background:var(--gold);color:#071018;padding:8px 12px;border-radius:8px;font-weight:800}
+#welcome{height:78vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:10px;animation:fadeIn 1s ease}
+#welcome h1{font-size:2.2rem;margin:0 0 8px}
+#welcome p{color:#cfeeff;margin:0 0 12px}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+main{max-width:1100px;margin:30px auto;padding:20px}
+.panel{background:rgba(255,255,255,0.03);padding:18px;border-radius:12px;margin-bottom:20px;box-shadow:0 6px 18px rgba(2,6,23,0.5);transition:transform .35s,opacity .45s}
+.panel:hover{transform:translateY(-4px)}
+.category{margin:14px 0}
+.word-list{list-style:none;padding:0;margin:8px 0}
+.word-list li{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);margin-bottom:8px}
+.audio{background:var(--gold);border:none;padding:8px 10px;border-radius:8px;font-weight:800;cursor:pointer;color:#071018}
+.btn-submit{background:var(--accent);border:none;color:#071018;padding:10px 14px;border-radius:8px;font-weight:800;cursor:pointer;margin-top:8px}
+.btn-gold{display:inline-block;background:var(--gold);color:#071018;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:800;margin-top:8px}
+.confirmation{color:#bff3c6;margin-top:12px;font-weight:700}
+.site-footer{text-align:center;padding:18px;color:#9fbcd6;margin-top:18px;background:transparent}
 
-h1 {
-  margin: 0;
-  font-size: 2.2em;
-  letter-spacing: 1px;
-}
+/* scroll reveal */
+.panel{opacity:0;transform:translateY(18px)}
+.panel.visible{opacity:1;transform:none;transition:all .6s ease}
 
-nav a {
-  color: #fff;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: #ffb347;
-}
-
-section {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.lesson {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  margin: 20px auto;
-  max-width: 600px;
-  padding: 20px;
-  transition: transform 0.3s;
-}
-
-.lesson:hover {
-  transform: scale(1.03);
-  background: rgba(255, 255, 255, 0.12);
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #0b1533;
-  font-size: 0.9em;
-  margin-top: 40px;
-}
-
-button, .btn {
-  background-color: #ffb347;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: #000;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-button:hover, .btn:hover {
-  background-color: #ffd580;
+/* responsive */
+@media(max-width:800px){
+  .word-list li{flex-direction:row;gap:8px}
+  .site-header nav a{display:none}
+  .site-header{padding:12px}
 }
