@@ -3,58 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FrenchEnglishStudio</title>
+  <title>French & English Studio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="welcome-message">Bienvenue sur FrenchEnglishStudio</div>
-
   <header>
-    <h1>Apprenez l’anglais et le français</h1>
-    <nav>
-      <a href="#lessons">Leçons de langues</a>
-      <a href="#reservation">Réserver un cours</a>
-    </nav>
+    <h1>French & English Studio</h1>
+    <p>Apprenez l’anglais et le français facilement</p>
   </header>
 
   <main>
-    <section id="lessons" class="section">
-      <h2>Leçons de langues</h2>
-      <div class="lesson">
-        <p><strong>Bonjour</strong> — <em>Hello</em> 
-          <button onclick="playAudio('bonjour')">🔊</button>
-        </p>
-        <audio id="bonjour" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_bonjour.mp3?filename=bonjour.mp3"></audio>
-
-        <p><strong>Merci</strong> — <em>Thank you</em>
-          <button onclick="playAudio('merci')">🔊</button>
-        </p>
-        <audio id="merci" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_merci.mp3?filename=merci.mp3"></audio>
-      </div>
+    <section id="lessons">
+      <h2>🎓 Salle de cours</h2>
+      <div id="lesson-container"></div>
     </section>
 
-    <section id="reservation" class="section">
-      <h2>Réserver un cours</h2>
-      <form action="https://formspree.io/f/mldrlobk" method="POST">
-        <label>Nom :</label>
-        <input type="text" name="nom" required>
+    <section id="quiz">
+      <h2>🧠 Quiz interactifs</h2>
+      <div id="quiz-container"></div>
+    </section>
+
+    <section id="reservation">
+      <h2>📅 Réservez votre cours</h2>
+      <form id="reservation-form" action="https://formspree.io/f/mnqeeoyz" method="POST">
+        <label>Nom complet :</label>
+        <input type="text" name="name" required>
 
         <label>Email :</label>
         <input type="email" name="email" required>
 
-        <label>Date souhaitée :</label>
-        <input type="date" name="date" required>
+        <label>Langue souhaitée :</label>
+        <select name="language" required>
+          <option value="français">Français</option>
+          <option value="anglais">Anglais</option>
+        </select>
 
         <label>Message :</label>
-        <textarea name="message" rows="4" placeholder="Indiquez vos besoins..."></textarea>
+        <textarea name="message" rows="4"></textarea>
 
-        <button type="submit">Envoyer la demande</button>
+        <button type="submit">Envoyer la réservation</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 FrenchEnglishStudio — Tous droits réservés</p>
+    <p>© 2025 French & English Studio - Tous droits réservés</p>
   </footer>
 
   <script src="script.js"></script>

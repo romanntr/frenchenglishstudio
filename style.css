@@ -1,82 +1,138 @@
+/* 🌙 Thème élégant et lisible */
 body {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
-  backdrop-filter: blur(5px);
-  color: #fff;
-  text-align: center;
-}
-
-/* Message de bienvenue */
-#welcome-message {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  background: rgba(0,0,0,0.7);
-  padding: 20px;
-  font-size: 1.5em;
-  animation: fadeOut 3s forwards;
-}
-
-@keyframes fadeOut {
-  0% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; visibility: hidden; }
+  color: #f0f0f0;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url("https://images.unsplash.com/photo-1529070538774-1843cb3265df") no-repeat center center fixed;
+  background-size: cover;
+  line-height: 1.6;
 }
 
 header {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 1em 0;
-  position: sticky;
-  top: 0;
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(0, 0, 50, 0.6);
+  backdrop-filter: blur(5px);
 }
 
-nav a {
+header h1 {
+  font-size: 2.5em;
+  margin: 0;
   color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: bold;
 }
 
-nav a:hover {
-  text-decoration: underline;
+header p {
+  font-size: 1.2em;
+  color: #b0c4de;
 }
 
-.section {
-  background: rgba(0, 0, 0, 0.5);
-  margin: 30px auto;
+main {
+  max-width: 900px;
+  margin: auto;
   padding: 20px;
-  max-width: 600px;
+  background: rgba(10, 10, 30, 0.6);
   border-radius: 10px;
 }
 
-button {
-  background-color: #0056b3;
-  color: white;
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: #87cefa;
+  border-bottom: 2px solid #87cefa;
+  padding-bottom: 8px;
+}
+
+#lesson-container div {
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.lesson-word {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+}
+
+button.audio-btn {
+  background: #87cefa;
   border: none;
-  padding: 6px 10px;
-  border-radius: 4px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
   cursor: pointer;
+  font-weight: bold;
+  color: #001f3f;
+  transition: 0.2s;
 }
 
-button:hover {
-  background-color: #003d80;
+button.audio-btn:hover {
+  background: #b0e0e6;
 }
 
-form {
+#quiz-container {
+  margin-top: 20px;
+}
+
+.quiz-question {
+  margin-bottom: 25px;
+}
+
+.quiz-option {
+  display: block;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid #87cefa;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.quiz-option:hover {
+  background: rgba(135, 206, 250, 0.2);
+}
+
+#reservation-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
-input, textarea {
-  padding: 8px;
+#reservation-form input,
+#reservation-form select,
+#reservation-form textarea {
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
   border: none;
-  border-radius: 4px;
+  font-size: 1em;
+}
+
+#reservation-form button {
+  background: #87cefa;
+  color: #001f3f;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#reservation-form button:hover {
+  background: #b0e0e6;
 }
 
 footer {
-  background: rgba(0,0,0,0.7);
-  padding: 10px;
+  text-align: center;
+  padding: 20px;
   font-size: 0.9em;
+  background: rgba(0,0,50,0.6);
+  color: #b0c4de;
 }
