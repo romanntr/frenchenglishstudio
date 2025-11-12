@@ -3,45 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Réserver un cours - French & English Studio</title>
+  <title>Réserver un cours - FrenchEnglishStudio</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      width: 80%;
+      margin: 50px auto;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    textarea {
+      resize: none;
+      grid-column: span 2;
+    }
+
+    button {
+      grid-column: span 2;
+      background: #f00;
+      color: white;
+      cursor: pointer;
+      padding: 12px;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #900;
+    }
+
+    @media (max-width: 700px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+      button, textarea {
+        grid-column: span 1;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Réserver un cours</h1>
     <nav>
-      <a href="index.html">Accueil</a>
-      <a href="cours.html">Salle de cours</a>
+      <a href="index.html">Salle de cours</a>
       <a href="quiz.html">Quiz interactifs</a>
-      <a href="reservation.html" class="active">Réserver un cours</a>
+      <a href="reservation.html">Réserver</a>
     </nav>
   </header>
 
-  <main>
-    <h2>Remplissez le formulaire ci-dessous</h2>
-
-    <form action="https://formspree.io/f/mkgwzpjz" method="POST">
-      <label>Nom complet :</label>
+  <form action="https://formspree.io/f/xqakvqaw" method="POST">
+    <div>
+      <label>Nom complet</label>
       <input type="text" name="nom" required>
+    </div>
 
-      <label>Email :</label>
+    <div>
+      <label>Email</label>
       <input type="email" name="email" required>
+    </div>
 
-      <label>Langue souhaitée :</label>
-      <select name="langue" required>
-        <option value="anglais">Cours d’anglais</option>
-        <option value="français">Cours de français</option>
-      </select>
+    <div>
+      <label>Niveau</label>
+      <input type="text" name="niveau" placeholder="Débutant, Intermédiaire, etc." required>
+    </div>
 
-      <label>Message :</label>
-      <textarea name="message" placeholder="Votre message..." required></textarea>
+    <div>
+      <label>Langue souhaitée</label>
+      <input type="text" name="langue" placeholder="Français / Anglais" required>
+    </div>
 
-      <button type="submit">Envoyer ma réservation</button>
-    </form>
-  </main>
+    <div style="grid-column: span 2;">
+      <label>Message</label>
+      <textarea name="message" rows="4" placeholder="Indiquez vos disponibilités..."></textarea>
+    </div>
+
+    <button type="submit">Envoyer la réservation</button>
+  </form>
 
   <footer>
-    <p>© 2025 French & English Studio</p>
+    <p>© 2025 FrenchEnglishStudio</p>
   </footer>
 </body>
 </html>
+
+
