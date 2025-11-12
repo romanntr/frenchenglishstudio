@@ -10,46 +10,28 @@
   <header>
     <h1>French & English Studio</h1>
     <p>Apprenez l’anglais et le français facilement</p>
+    <nav>
+      <a href="index.html" class="active">Accueil</a>
+      <a href="cours.html">Salle de cours</a>
+      <a href="quiz.html">Quiz interactifs</a>
+      <a href="reservation.html">Réserver un cours</a>
+    </nav>
   </header>
 
   <main>
-    <section id="lessons">
-      <h2>🎓 Salle de cours</h2>
-      <div id="lesson-container"></div>
-    </section>
-
-    <section id="quiz">
-      <h2>🧠 Quiz interactifs</h2>
-      <div id="quiz-container"></div>
-    </section>
-
-    <section id="reservation">
-      <h2>📅 Réservez votre cours</h2>
-      <form id="reservation-form" action="https://formspree.io/f/mnqeeoyz" method="POST">
-        <label>Nom complet :</label>
-        <input type="text" name="name" required>
-
-        <label>Email :</label>
-        <input type="email" name="email" required>
-
-        <label>Langue souhaitée :</label>
-        <select name="language" required>
-          <option value="français">Français</option>
-          <option value="anglais">Anglais</option>
-        </select>
-
-        <label>Message :</label>
-        <textarea name="message" rows="4"></textarea>
-
-        <button type="submit">Envoyer la réservation</button>
-      </form>
+    <section class="intro">
+      <h2>Bienvenue sur French & English Studio</h2>
+      <p>Découvrez une méthode simple et efficace pour apprendre le français et l’anglais à votre rythme.</p>
+      <div class="cta-buttons">
+        <a href="cours.html" class="btn">🎓 Salle de cours</a>
+        <a href="quiz.html" class="btn">🧠 Quiz interactifs</a>
+        <a href="reservation.html" class="btn">📅 Réserver un cours</a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 French & English Studio - Tous droits réservés</p>
+    <p>© 2025 French & English Studio — Tous droits réservés</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

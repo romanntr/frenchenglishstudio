@@ -1,138 +1,66 @@
-/* 🌙 Thème élégant et lisible */
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #021b39, #0c2a55);
+  color: white;
   margin: 0;
   padding: 0;
-  color: #f0f0f0;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-              url("https://images.unsplash.com/photo-1529070538774-1843cb3265df") no-repeat center center fixed;
-  background-size: cover;
-  line-height: 1.6;
+  text-align: center;
 }
 
 header {
-  text-align: center;
-  padding: 60px 20px;
-  background: rgba(0, 0, 50, 0.6);
-  backdrop-filter: blur(5px);
-}
-
-header h1 {
-  font-size: 2.5em;
-  margin: 0;
-  color: #fff;
-}
-
-header p {
-  font-size: 1.2em;
-  color: #b0c4de;
-}
-
-main {
-  max-width: 900px;
-  margin: auto;
+  background: rgba(0,0,0,0.4);
   padding: 20px;
-  background: rgba(10, 10, 30, 0.6);
-  border-radius: 10px;
 }
 
-section {
-  margin-bottom: 40px;
-}
-
-h2 {
-  color: #87cefa;
-  border-bottom: 2px solid #87cefa;
-  padding-bottom: 8px;
-}
-
-#lesson-container div {
-  background: rgba(255,255,255,0.1);
-  padding: 15px;
-  border-radius: 8px;
-  margin: 10px 0;
-}
-
-.lesson-word {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 8px 0;
-}
-
-button.audio-btn {
-  background: #87cefa;
-  border: none;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
   font-weight: bold;
-  color: #001f3f;
-  transition: 0.2s;
 }
 
-button.audio-btn:hover {
-  background: #b0e0e6;
+nav a.active {
+  border-bottom: 2px solid #00ffcc;
 }
 
-#quiz-container {
-  margin-top: 20px;
-}
-
-.quiz-question {
-  margin-bottom: 25px;
-}
-
-.quiz-option {
-  display: block;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid #87cefa;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 8px 0;
-  cursor: pointer;
+.btn {
+  display: inline-block;
+  background: #00bfa6;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  text-decoration: none;
+  border-radius: 8px;
   transition: 0.3s;
 }
-
-.quiz-option:hover {
-  background: rgba(135, 206, 250, 0.2);
+.btn:hover {
+  background: #00e6c3;
 }
 
-#reservation-form {
+form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 20px;
 }
 
-#reservation-form input,
-#reservation-form select,
-#reservation-form textarea {
+input, select, textarea {
+  width: 80%;
   padding: 10px;
-  margin: 8px 0;
-  border-radius: 5px;
-  border: none;
-  font-size: 1em;
-}
-
-#reservation-form button {
-  background: #87cefa;
-  color: #001f3f;
-  font-weight: bold;
-  border: none;
   border-radius: 8px;
-  padding: 12px;
+  border: none;
+}
+
+button {
+  background: #00bfa6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-#reservation-form button:hover {
-  background: #b0e0e6;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  background: rgba(0,0,50,0.6);
-  color: #b0c4de;
+button:hover {
+  background: #00e6c3;
 }
