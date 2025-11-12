@@ -1,65 +1,165 @@
+/* Reset basique */
+* { box-sizing: border-box; }
+
+/* Page et fond */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f7f9fc;
-  color: #222;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #0b0b0b;
+  color: #eee;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-header {
-  background: #0a1a3f;
-  color: white;
-  padding: 15px 0;
+/* Menu fixe */
+.topbar {
   position: fixed;
-  width: 100%;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: linear-gradient(90deg, #0b0b0b, #111111);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 2px solid #220000;
+  z-index: 9999;
 }
 
-header h1 {
-  margin: 0;
-  text-align: center;
+.brand {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  font-size: 1.15rem;
 }
 
-nav {
-  text-align: center;
-  margin-top: 8px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
+/* Menu links */
+.menu a {
+  color: #ddd;
   margin: 0 10px;
-  font-weight: bold;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 6px;
 }
 
-nav a:hover, nav a.active {
-  text-decoration: underline;
+.menu a:hover { background: rgba(255,255,255,0.03); color: #fff; }
+
+.menu a.active {
+  background: linear-gradient(90deg,#330000,#770000);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(119,0,0,0.12);
 }
 
-main {
-  padding: 120px 20px 50px;
-  max-width: 800px;
-  margin: auto;
+/* Container page */
+.container {
+  max-width: 1000px;
+  margin: 110px auto 60px;
+  padding: 20px;
 }
 
-button, .btn {
-  background: #0a1a3f;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+.hero h1 { color: #fff; margin: 0 0 12px; font-size: 2.2rem; }
+.lead { color: #dcdcdc; margin-bottom: 18px; }
+
+/* Boutons */
+.btn {
+  display: inline-block;
+  background: #c90808; /* rouge */
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 0;
   cursor: pointer;
 }
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #ffdddd;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(201,8,8,0.18); }
 
-button:hover, .btn:hover {
-  background: #162b67;
+/* Sections / cards */
+h2 { color: #ffdddd; margin-top: 0; }
+section.card {
+  background: #101010;
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(255,0,0,0.05);
 }
 
-.fade-in {
-  animation: fadeIn 1s ease-in;
+/* Lessons list */
+.lesson-card {
+  background: #111;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+.lesson-card .label { font-weight: 600; color: #fff; }
+.audio-btn {
+  background: #220000;
+  color: #fff;
+  border: 1px solid #550000;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.audio-btn:hover { background: #c90808; }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Quiz */
+.quiz-controls { display:flex; gap:10px; align-items:center; margin-bottom:14px; flex-wrap:wrap; }
+.quiz-area { margin-top: 18px; }
+.question {
+  background: #0e0e0e;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.option {
+  display:inline-block;
+  margin:6px 6px 0 0;
+  padding:8px 12px;
+  background:#151515;
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,0.03);
+  cursor:pointer;
+}
+.option.correct { background: #0b3; color: #001; }
+.option.wrong { background: #700; color: #fff; }
+
+/* Reservation form */
+.res-form { max-width: 700px; margin: 0 auto; display:flex; flex-direction:column; gap:10px; }
+input, select, textarea {
+  padding: 10px; border-radius: 6px; border:1px solid rgba(255,255,255,0.06); background:#0f0f0f; color:#fff;
+}
+.confirm-text { color: #9fffa8; margin-top:12px; font-weight:700; }
+
+/* Footer */
+.footer { color: #bfbfbf; text-align:center; padding:30px 0; }
+
+/* Animations */
+.fade-in { animation: fadeIn 0.6s ease-out both; }
+@keyframes fadeIn { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform:none; } }
+
+/* Responsive */
+@media (max-width:720px) {
+  .menu { display:flex; gap:6px; font-size:0.95rem; }
+  .container { margin: 100px 12px; padding: 12px; }
+  .lesson-card { flex-direction: column; gap:8px; align-items: flex-start; }
+  .option { display:block; width:100%; }
 }

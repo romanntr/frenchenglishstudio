@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz interactifs - FrenchEnglishStudio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz — FrenchEnglishStudio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>FrenchEnglishStudio</h1>
-    <nav>
+  <header class="topbar">
+    <div class="brand">FrenchEnglishStudio</div>
+    <nav class="menu">
       <a href="index.html">Accueil</a>
       <a href="cours.html">Salle de cours</a>
       <a href="quiz.html" class="active">Quiz</a>
@@ -17,10 +17,25 @@
     </nav>
   </header>
 
-  <main class="fade-in">
+  <main class="container fade-in">
     <h2>Quiz interactifs</h2>
-    <div id="quiz-container"></div>
+    <p>Choisis une catégorie ci-dessous, puis lance le quiz. Écoute la prononciation quand disponible.</p>
+
+    <div class="quiz-controls">
+      <label>Catégorie :</label>
+      <select id="quiz-category">
+        <!-- rempli depuis script.js -->
+      </select>
+      <button id="start-quiz" class="btn">Lancer le quiz</button>
+    </div>
+
+    <div id="quiz-area"></div>
+    <div id="quiz-result" class="quiz-result"></div>
   </main>
+
+  <footer class="footer">
+    <small>© 2025 FrenchEnglishStudio</small>
+  </footer>
 
   <script src="script.js"></script>
 </body>

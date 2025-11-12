@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Réserver un cours - FrenchEnglishStudio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Réserver un cours — FrenchEnglishStudio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>FrenchEnglishStudio</h1>
-    <nav>
+  <header class="topbar">
+    <div class="brand">FrenchEnglishStudio</div>
+    <nav class="menu">
       <a href="index.html">Accueil</a>
       <a href="cours.html">Salle de cours</a>
       <a href="quiz.html">Quiz</a>
@@ -17,28 +17,39 @@
     </nav>
   </header>
 
-  <main class="fade-in">
+  <main class="container fade-in">
     <h2>Réserver un cours</h2>
-    <form id="reservation-form">
-      <label>Nom complet :</label>
-      <input type="text" name="nom" required>
+    <p>Remplis ce formulaire — tu recevras une confirmation.</p>
 
-      <label>Email :</label>
-      <input type="email" name="email" required>
+    <form id="reservation-form" class="res-form">
+      <label>Nom complet</label>
+      <input name="name" type="text" required />
 
-      <label>Langue à apprendre :</label>
-      <select name="langue">
+      <label>Email</label>
+      <input name="email" type="email" required />
+
+      <label>Langue souhaitée</label>
+      <select name="language">
         <option value="français">Français</option>
         <option value="anglais">Anglais</option>
+        <option value="les deux">Les deux</option>
       </select>
 
-      <label>Message :</label>
+      <label>Date / Créneau préféré</label>
+      <input name="date" type="text" placeholder="Ex : Lundi 15h" />
+
+      <label>Message (optionnel)</label>
       <textarea name="message" rows="4"></textarea>
 
-      <button type="submit">Envoyer</button>
+      <button type="submit" class="btn">Envoyer la réservation</button>
     </form>
-    <p id="confirmation"></p>
+
+    <p id="reservation-confirm" class="confirm-text"></p>
   </main>
+
+  <footer class="footer">
+    <small>© 2025 FrenchEnglishStudio</small>
+  </footer>
 
   <script src="script.js"></script>
 </body>

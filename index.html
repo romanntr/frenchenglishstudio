@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>FrenchEnglishStudio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>FrenchEnglishStudio</h1>
-    <nav>
-      <a href="index.html">Accueil</a>
+  <header class="topbar">
+    <div class="brand">FrenchEnglishStudio</div>
+    <nav class="menu">
+      <a href="index.html" class="active">Accueil</a>
       <a href="cours.html">Salle de cours</a>
       <a href="quiz.html">Quiz</a>
       <a href="reserver.html">Réserver</a>
     </nav>
   </header>
 
-  <main class="fade-in">
+  <main class="container fade-in">
     <section class="hero">
-      <h2>Apprenez l’anglais et le français facilement</h2>
-      <p>Des cours clairs, des quiz interactifs et une expérience immersive.</p>
-      <a href="cours.html" class="btn">Commencer maintenant</a>
+      <h1>Apprenez l’anglais et le français</h1>
+      <p class="lead">Cours clairs, audios naturels et quiz interactifs — progressez rapidement.</p>
+      <div class="ctas">
+        <a href="cours.html" class="btn">🎓 Salle de cours</a>
+        <a href="quiz.html" class="btn ghost">🧠 Quiz interactifs</a>
+        <a href="reserver.html" class="btn ghost">📅 Réserver un cours</a>
+      </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <small>© 2025 FrenchEnglishStudio — Tous droits réservés</small>
+  </footer>
 
   <script src="script.js"></script>
 </body>
