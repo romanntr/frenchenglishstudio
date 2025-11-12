@@ -3,55 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz interactifs - French & English Studio</title>
+  <title>Quiz interactifs - FrenchEnglishStudio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Quiz interactifs</h1>
+    <h1>FrenchEnglishStudio</h1>
     <nav>
       <a href="index.html">Accueil</a>
       <a href="cours.html">Salle de cours</a>
-      <a href="quiz.html" class="active">Quiz interactifs</a>
-      <a href="reservation.html">Réserver un cours</a>
+      <a href="quiz.html" class="active">Quiz</a>
+      <a href="reserver.html">Réserver</a>
     </nav>
   </header>
 
-  <main>
-    <h2>Testez vos connaissances</h2>
-
-    <div class="quiz">
-      <p>Comment dit-on "Merci" en anglais ?</p>
-      <button onclick="checkAnswer(this, true)">Thank you</button>
-      <button onclick="checkAnswer(this, false)">Please</button>
-      <button onclick="checkAnswer(this, false)">Goodbye</button>
-    </div>
-
-    <div class="quiz">
-      <p>Comment dit-on "Hello" en français ?</p>
-      <button onclick="checkAnswer(this, true)">Bonjour</button>
-      <button onclick="checkAnswer(this, false)">Au revoir</button>
-      <button onclick="checkAnswer(this, false)">Merci</button>
-    </div>
-
-    <p id="result"></p>
+  <main class="fade-in">
+    <h2>Quiz interactifs</h2>
+    <div id="quiz-container"></div>
   </main>
 
-  <footer>
-    <p>© 2025 French & English Studio</p>
-  </footer>
-
-  <script>
-    function checkAnswer(button, correct) {
-      const result = document.getElementById('result');
-      if (correct) {
-        result.textContent = "✅ Bonne réponse !";
-        result.style.color = "#00ff9d";
-      } else {
-        result.textContent = "❌ Mauvaise réponse, essaye encore.";
-        result.style.color = "#ff5050";
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

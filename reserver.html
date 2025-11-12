@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réserver un cours - FrenchEnglishStudio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>FrenchEnglishStudio</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="cours.html">Salle de cours</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="reserver.html" class="active">Réserver</a>
+    </nav>
+  </header>
+
+  <main class="fade-in">
+    <h2>Réserver un cours</h2>
+    <form id="reservation-form">
+      <label>Nom complet :</label>
+      <input type="text" name="nom" required>
+
+      <label>Email :</label>
+      <input type="email" name="email" required>
+
+      <label>Langue à apprendre :</label>
+      <select name="langue">
+        <option value="français">Français</option>
+        <option value="anglais">Anglais</option>
+      </select>
+
+      <label>Message :</label>
+      <textarea name="message" rows="4"></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+    <p id="confirmation"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -3,51 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Salle de cours - French & English Studio</title>
+  <title>Salle de cours - FrenchEnglishStudio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Salle de cours</h1>
+    <h1>FrenchEnglishStudio</h1>
     <nav>
       <a href="index.html">Accueil</a>
       <a href="cours.html" class="active">Salle de cours</a>
-      <a href="quiz.html">Quiz interactifs</a>
-      <a href="reservation.html">Réserver un cours</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="reserver.html">Réserver</a>
     </nav>
   </header>
 
-  <main>
-    <h2>Leçons interactives</h2>
-
-    <div class="lesson">
-      <p>Bonjour — <button onclick="speak('Bonjour')">🔊</button></p>
-      <p>Hello — <button onclick="speak('Hello')">🔊</button></p>
-    </div>
-
-    <div class="lesson">
-      <p>Merci — <button onclick="speak('Merci')">🔊</button></p>
-      <p>Thank you — <button onclick="speak('Thank you')">🔊</button></p>
-    </div>
-
-    <div class="lesson">
-      <p>Comment ça va ? — <button onclick="speak('Comment ça va ?')">🔊</button></p>
-      <p>How are you? — <button onclick="speak('How are you?')">🔊</button></p>
-    </div>
-
+  <main class="fade-in">
+    <h2>Salle de cours</h2>
+    <div id="cours-container"></div>
   </main>
 
-  <footer>
-    <p>© 2025 French & English Studio</p>
-  </footer>
-
-  <script>
-    function speak(text) {
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = /[a-z]/.test(text) ? 'en-US' : 'fr-FR';
-      utterance.rate = 1;
-      speechSynthesis.speak(utterance);
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
