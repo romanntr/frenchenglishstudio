@@ -1,38 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FrenchEnglishStudio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrenchEnglishStudio - Salle de cours</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">FrenchEnglishStudio</div>
-    <nav class="menu">
-      <a href="index.html" class="active">Accueil</a>
-      <a href="cours.html">Salle de cours</a>
-      <a href="quiz.html">Quiz</a>
-      <a href="reserver.html">Réserver</a>
-    </nav>
-  </header>
+    <header>
+        <h1>FrenchEnglishStudio</h1>
+        <nav>
+            <a href="#cours">Salle de cours</a>
+            <a href="#quiz">Quiz interactifs</a>
+            <a href="#reservation">Réserver un cours</a>
+        </nav>
+    </header>
 
-  <main class="container fade-in">
-    <section class="hero">
-      <h1>Apprenez l’anglais et le français</h1>
-      <p class="lead">Cours clairs, audios naturels et quiz interactifs — progressez rapidement.</p>
-      <div class="ctas">
-        <a href="cours.html" class="btn">🎓 Salle de cours</a>
-        <a href="quiz.html" class="btn ghost">🧠 Quiz interactifs</a>
-        <a href="reserver.html" class="btn ghost">📅 Réserver un cours</a>
-      </div>
-    </section>
-  </main>
+    <main>
+        <section id="cours" class="content-section">
+            <h2>Salle de cours</h2>
+            <div id="lessons"></div>
+        </section>
 
-  <footer class="footer">
-    <small>© 2025 FrenchEnglishStudio — Tous droits réservés</small>
-  </footer>
+        <section id="quiz" class="content-section">
+            <h2>Quiz interactifs</h2>
+            <div id="quiz-section"></div>
+        </section>
 
-  <script src="script.js"></script>
+        <section id="reservation" class="content-section">
+            <h2>Réserver un cours</h2>
+            <form id="reservation-form" action="https://formspree.io/f/xyzexample" method="POST">
+                <div class="form-grid">
+                    <div class="form-column">
+                        <label>Nom complet :</label>
+                        <input type="text" name="nom" required>
+
+                        <label>Email :</label>
+                        <input type="email" name="email" required>
+
+                        <label>Téléphone :</label>
+                        <input type="text" name="telephone" required>
+                    </div>
+
+                    <div class="form-column">
+                        <label>Date souhaitée :</label>
+                        <input type="date" name="date" required>
+
+                        <label>Heure :</label>
+                        <input type="time" name="heure" required>
+
+                        <label>Langue :</label>
+                        <select name="langue">
+                            <option value="francais">Français</option>
+                            <option value="anglais">Anglais</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit">Envoyer la réservation</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 FrenchEnglishStudio. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>

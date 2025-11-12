@@ -1,219 +1,124 @@
-/* Reset */
-* { box-sizing: border-box; }
-
-/* Couleurs principales */
-:root {
-  --noir: #0b0b0b;
-  --gris-foncé: #141414;
-  --rouge: #e50914;
-  --rouge-foncé: #b0070e;
-  --blanc: #f5f5f5;
-  --gris: #cfcfcf;
-}
-
-/* Corps */
+/* Style principal */
 body {
-  margin: 0;
-  font-family: "Poppins", Arial, sans-serif;
-  background: var(--noir);
-  color: var(--blanc);
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    background: linear-gradient(to bottom, #0b1b3f, #000);
 }
 
-/* Barre du haut */
-.topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 70px;
-  background: linear-gradient(90deg, #000, #200000);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  border-bottom: 2px solid var(--rouge-foncé);
-  z-index: 999;
+/* En-tête */
+header {
+    background: linear-gradient(90deg, #0b1b3f, #000);
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.brand {
-  color: var(--rouge);
-  font-weight: 700;
-  font-size: 1.2rem;
+header h1 {
+    margin: 0;
+    font-size: 2rem;
 }
 
-.menu a {
-  color: var(--gris);
-  margin: 0 10px;
-  text-decoration: none;
-  padding: 8px 10px;
-  border-radius: 6px;
-  transition: 0.2s;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
 }
 
-.menu a:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--blanc);
+nav a:hover {
+    text-decoration: underline;
 }
 
-.menu a.active {
-  background: var(--rouge);
-  color: var(--blanc);
+/* Sections */
+.content-section {
+    padding: 40px 20px;
+    text-align: center;
 }
 
-/* Contenu */
-.container {
-  max-width: 1000px;
-  margin: 100px auto 60px;
-  padding: 20px;
+h2 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid #1e3c72;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
-/* Titres et texte */
-h1, h2, h3 {
-  color: var(--rouge);
-  margin-bottom: 10px;
+/* Formulaire réservation */
+form {
+    max-width: 900px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
 }
 
-p {
-  color: var(--gris);
-  line-height: 1.6;
+.form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-/* Boutons */
-.btn {
-  background: var(--rouge);
-  color: var(--blanc);
-  border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 700;
-  transition: 0.2s;
+.form-column {
+    flex: 1;
+    min-width: 250px;
 }
 
-.btn:hover {
-  background: var(--rouge-foncé);
-  transform: translateY(-2px);
+label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
 }
 
-.btn.ghost {
-  background: transparent;
-  border: 1px solid var(--rouge);
-  color: var(--rouge);
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
 }
 
-.btn.ghost:hover {
-  background: var(--rouge);
-  color: var(--blanc);
+button {
+    background-color: #1e3c72;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
-/* Cartes de leçons */
-.card {
-  background: var(--gris-foncé);
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 15px;
-  border: 1px solid rgba(255, 0, 0, 0.2);
-}
-
-.lesson-card {
-  background: #1c1c1c;
-  border-radius: 8px;
-  padding: 10px 14px;
-  margin: 8px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.lesson-card .label {
-  color: var(--blanc);
-  font-weight: 600;
-}
-
-.audio-btn {
-  background: var(--rouge);
-  color: var(--blanc);
-  border: none;
-  border-radius: 6px;
-  padding: 6px 10px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.audio-btn:hover {
-  background: var(--rouge-foncé);
-}
-
-/* Quiz */
-.question {
-  background: #181818;
-  padding: 12px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.option {
-  display: inline-block;
-  background: #222;
-  color: var(--blanc);
-  padding: 8px 12px;
-  border-radius: 6px;
-  margin: 5px;
-  cursor: pointer;
-  transition: 0.2s;
-  border: 1px solid #333;
-}
-
-.option:hover {
-  background: var(--rouge);
-}
-
-.option.correct {
-  background: #00b33c;
-  color: #fff;
-}
-
-.option.wrong {
-  background: #990000;
-  color: #fff;
-}
-
-/* Résultat */
-.quiz-result h3 {
-  color: var(--rouge);
-  margin-top: 20px;
-}
-
-/* Formulaire */
-.res-form input,
-.res-form select,
-.res-form textarea {
-  background: #111;
-  color: var(--blanc);
-  border: 1px solid #333;
-  border-radius: 6px;
-  padding: 10px;
-}
-
-.confirm-text {
-  color: #00ff88;
-  font-weight: bold;
-  margin-top: 10px;
+button:hover {
+    background-color: #274b8b;
 }
 
 /* Pied de page */
-.footer {
-  color: #aaa;
-  text-align: center;
-  padding: 20px 0;
-  border-top: 1px solid #222;
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
 }
 
-/* Animation */
-.fade-in {
-  animation: fadeIn 0.5s ease-in;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: none; }
+/* Version mobile */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-grid {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
 }
