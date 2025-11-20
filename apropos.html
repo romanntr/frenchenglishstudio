@@ -2,33 +2,40 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>À propos de nous</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header>
-    <div class="phone">📞 +33 6 65 52 03 78</div>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+<header class="top-bar">
+    <div class="phone-number">+33 6 65 52 03 78</div>
+    <img src="menu-icon.png" class="menu-icon" onclick="toggleMenu()">
 </header>
 
-<nav id="menu">
+<nav id="sideMenu" class="side-menu">
     <a href="index.html">Accueil</a>
     <a href="cours-francais.html">Cours de français</a>
     <a href="cours-anglais.html">Cours d’anglais</a>
     <a href="apropos.html">À propos de nous</a>
-    <a href="reservation.html">Réserver un cours</a>
 </nav>
 
-<div class="container">
-    <h1>À propos de nous</h1>
+<section class="page-content">
+    <h1>À PROPOS DE NOUS</h1>
 
     <p>
-        Nous proposons des cours adaptés à tous les niveaux pour vous aider à maîtriser le français et l’anglais.
+        Nous proposons des cours de français et d’anglais accessibles à tous.  
+        Notre objectif : vous aider à progresser rapidement, avec des méthodes simples et efficaces.
     </p>
-</div>
+</section>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("sideMenu");
+    menu.style.right = (menu.style.right === "0px") ? "-260px" : "0px";
+}
+</script>
 
 </body>
 </html>

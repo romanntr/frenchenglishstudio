@@ -2,37 +2,43 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>FrenchEnglishStudio - Accueil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil – Cours de langues</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header>
-    <div class="phone">📞 +33 6 65 52 03 78</div>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+<header class="top-bar">
+    <div class="phone-number">+33 6 65 52 03 78</div>
+    <img src="menu-icon.png" class="menu-icon" onclick="toggleMenu()">
 </header>
 
-<nav id="menu">
+<nav id="sideMenu" class="side-menu">
     <a href="index.html">Accueil</a>
     <a href="cours-francais.html">Cours de français</a>
     <a href="cours-anglais.html">Cours d’anglais</a>
     <a href="apropos.html">À propos de nous</a>
-    <a href="reservation.html">Réserver un cours</a>
 </nav>
 
-<div class="container">
-    <h1>Apprendre l’anglais et le français</h1>
-
-    <img src="A_digital_screenshot_of_a_French_language_online_c.png" class="image-center">
-
+<section class="hero">
+    <img src="images/accueil.jpg" class="hero-img">
+    <h1>Apprenez l’anglais et le français</h1>
     <p>
-        Apprenez facilement depuis chez vous. Des cours adaptés, simples et efficaces.
+        Des cours simples, efficaces et adaptés à votre rythme.  
+        Progressez depuis chez vous sans stress.
     </p>
+    <a href="https://wa.me/33665520378?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server." class="btn-whatsapp">
+        Réserver sur WhatsApp
+    </a>
+</section>
 
-    <a class="button" href="reservation.html">Réserver</a>
-</div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("sideMenu");
+    menu.style.right = (menu.style.right === "0px") ? "-260px" : "0px";
+}
+</script>
 
 </body>
 </html>

@@ -2,27 +2,28 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cours de français</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header>
-    <div class="phone">📞 +33 6 65 52 03 78</div>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+<header class="top-bar">
+    <div class="phone-number">+33 6 65 52 03 78</div>
+    <img src="menu-icon.png" class="menu-icon" onclick="toggleMenu()">
 </header>
 
-<nav id="menu">
+<nav id="sideMenu" class="side-menu">
     <a href="index.html">Accueil</a>
     <a href="cours-francais.html">Cours de français</a>
     <a href="cours-anglais.html">Cours d’anglais</a>
     <a href="apropos.html">À propos de nous</a>
-    <a href="reservation.html">Réserver un cours</a>
 </nav>
 
-<div class="container">
+<section class="page-content">
+    <img src="images/francais.jpg" class="page-img">
+
     <h1>COURS DE FRANÇAIS</h1>
 
     <p>
@@ -30,8 +31,16 @@
         Nos méthodes vous permettent d’évoluer et d’atteindre vos objectifs, sans stress.
     </p>
 
-    <a class="button" href="reservation.html">Réserver</a>
-</div>
+    <a href="https://wa.me/33665520378?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20un%20cours%20de%20fran%C3%A7ais." 
+       class="btn-whatsapp">Réserver sur WhatsApp</a>
+</section>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("sideMenu");
+    menu.style.right = (menu.style.right === "0px") ? "-260px" : "0px";
+}
+</script>
 
 </body>
 </html>
